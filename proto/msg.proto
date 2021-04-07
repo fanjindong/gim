@@ -1,0 +1,25 @@
+syntax = "proto3";
+option go_package = "./msg";
+
+
+enum MsgType{
+  Ping = 0x0000;
+  Single = 0x0001;
+}
+
+message PingReq{
+}
+message PingReply{
+}
+
+message SendMsgReq{
+  string convId = 1;
+}
+message SendMsgReply{
+}
+
+message PushMsgReq{
+  string convId = 1;
+}
+message PushMsgReply{
+}
