@@ -2,14 +2,12 @@ syntax = "proto3";
 option go_package = "./msg";
 
 
-enum MsgType{
-  Ping = 0x0000;
-  Single = 0x0001;
-}
-
 message PingReq{
+  string Uid = 1;
 }
 message PingReply{
+  uint32 Code = 1;
+  string Msg = 2;
 }
 
 message SendMsgReq{
