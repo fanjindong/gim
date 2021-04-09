@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"encoding/binary"
-	"fmt"
 	"github.com/fanjindong/gim/proto"
 	"github.com/fanjindong/gim/proto/msg"
 	protobuf "github.com/golang/protobuf/proto"
@@ -75,7 +74,6 @@ func readByConn(conn io.Reader) *proto.MsgProtocol {
 	mp := &proto.MsgProtocol{}
 	header := make([]byte, proto.DefaultHeadLength)
 	conn.Read(header)
-	fmt.Println(header)
 	buffer := bytes.NewBuffer(header)
 
 	_ = binary.Read(buffer, binary.BigEndian, &mp.Version)
