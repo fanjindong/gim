@@ -66,7 +66,7 @@ func TestPing(t *testing.T) {
 	respMsg := readByConn(conn)
 	pong := &msg.PingReply{}
 	protobuf.Unmarshal(respMsg.Data, pong)
-	// t.Logf("resp: %+v, \npong: %+v\n", respMsg, pong)
+	t.Logf("resp: %+v, \npong: %+v\n", respMsg, pong)
 	t.Log("code:", pong.Code, "msg:", pong.Msg)
 }
 
